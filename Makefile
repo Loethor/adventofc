@@ -30,7 +30,6 @@ run: check-args
 		$(CC) $(CFLAGS) -o "$(OUTPUT_EXE)" "$(SRC_FILE)" common/utils.c; \
 		echo "Running solution for Year $(YEAR), Day $(DAY):"; \
 		./"$(OUTPUT_EXE)"; \
-		rm -f "$(OUTPUT_EXE)"; \
 	else \
 		echo "Solution source file for Year $(YEAR), Day $(DAY) not found."; \
 	fi

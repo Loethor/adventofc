@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Solution",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/${fileBasenameNoExtension}_solution", // Flexible program path
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}", // Flexible working directory
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "miDebuggerPath": "C:/Program Files (x86)/mingw64/bin/gdb.exe", // Path to GDB
+        "preLaunchTask": "Make: Run Solution",  // Run the generic make task before debugging
+        "postDebugTask": "Make: Clean Executables",  // Optional: clean up after debugging
+        "debugServerArgs": "",
+        "serverStarted": "",
+        "filterStderr": true,
+        "filterStdout": false
+      }
+    ]
+  }
+  
