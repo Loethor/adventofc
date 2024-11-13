@@ -3,10 +3,7 @@
         {
             "name": "MinGW64",
             "includePath": [
-                "${workspaceFolder}/**",
-                // "${workspaceFolder}/common/",
-                // "${workspaceFolder}/*/day*/src/",
-                // "C:/Program Files (x86)/mingw64/include"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
