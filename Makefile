@@ -39,6 +39,13 @@ run: check-args check-src
 	@./$(OUTPUT_EXE)
 	@rm -f day*_solution.exe
 
+regex: check-args check-src
+	$(CC) $(CFLAGS) -o $(OUTPUT_EXE) $(SRC_FILE) common/utils.c -lpcre
+	@echo "Running solution for Year $(YEAR), Day $(DAY):"
+	@echo -e ""
+	@./$(OUTPUT_EXE)
+	@rm -f day*_solution.exe
+
 # Run the solution for a specific year and day
 debug: check-args check-src
 	$(CC) -g $(CFLAGS) -o $(OUTPUT_EXE) $(SRC_FILE) common/utils.c
