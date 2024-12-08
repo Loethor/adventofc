@@ -36,7 +36,15 @@ run: check-args check-src
 	$(CC) $(CFLAGS) -o $(OUTPUT_EXE) $(SRC_FILE) common/utils.c
 	@echo "Running solution for Year $(YEAR), Day $(DAY):"
 	./$(OUTPUT_EXE)
+	@rm -f day*_solution.exe
+
+# Run the solution for a specific year and day
+debug: check-args check-src
+	$(CC) -g $(CFLAGS) -o $(OUTPUT_EXE) $(SRC_FILE) common/utils.c
+	@echo "Running solution for Year $(YEAR), Day $(DAY):"
+	gdb ./$(OUTPUT_EXE)
+	@rm -f day*_solution.exe
 
 # Clean all executables
 clean:
-	rm -f day*_solution
+	rm -f day*_solution.exe
