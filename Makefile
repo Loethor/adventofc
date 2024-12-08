@@ -35,14 +35,15 @@ check-src:
 run: check-args check-src
 	$(CC) $(CFLAGS) -o $(OUTPUT_EXE) $(SRC_FILE) common/utils.c
 	@echo "Running solution for Year $(YEAR), Day $(DAY):"
-	./$(OUTPUT_EXE)
+	@echo -e ""
+	@./$(OUTPUT_EXE)
 	@rm -f day*_solution.exe
 
 # Run the solution for a specific year and day
 debug: check-args check-src
 	$(CC) -g $(CFLAGS) -o $(OUTPUT_EXE) $(SRC_FILE) common/utils.c
-	@echo "Running solution for Year $(YEAR), Day $(DAY):"
-	gdb ./$(OUTPUT_EXE)
+	@echo "Running solution for Year $(YEAR), Day $(DAY) with gdb:"
+	@gdb ./$(OUTPUT_EXE)
 	@rm -f day*_solution.exe
 
 # Clean all executables
